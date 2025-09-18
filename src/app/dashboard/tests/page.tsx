@@ -2,6 +2,7 @@ import { Header } from '@/components/layout/header';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import Link from 'next/link';
 
 const tests = [
   {
@@ -62,7 +63,9 @@ export default function TestsPage() {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button className="w-full btn-primary group-hover:scale-105 transition-transform duration-300">Start Test</Button>
+                <Link href={`/dashboard/tests/mock-test-${index + 1}`}>
+                  <Button className="w-full btn-primary group-hover:scale-105 transition-transform duration-300">Start Test</Button>
+                </Link>
               </CardFooter>
             </Card>
           ))}
